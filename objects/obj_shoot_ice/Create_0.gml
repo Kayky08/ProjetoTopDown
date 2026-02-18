@@ -61,7 +61,7 @@ check_player = function (){
 freeze = function (){
     timer_freeze++
     
-    if(timer_freeze >= time_freeze || mouse_check_button_pressed(mb_right)){
+    if(timer_freeze >= time_freeze || keyboard_check_pressed(ord("E"))){
         check_player();
     }
 }
