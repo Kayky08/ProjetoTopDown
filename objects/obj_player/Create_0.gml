@@ -41,22 +41,19 @@ inverted = 0;
 
 #region functions
 move_hands = function (){
-    if (inverted) position_hands = !position_hands;
+    var _dir = point_direction(x,y,mouse_x,mouse_y);
     
-    if (position_hands) {
-    	lhand.x = x + 35
-        rhand.x = x - 35
-        
-        lhand.y = y
-        rhand.y = y
-    }
-    else {
-    	lhand.x = x 
-        rhand.x = x 
-        
-        lhand.y = y - 35
-        rhand.y = y + 35
-    }
+    var _x = x + lengthdir_x(sprite_width + 10,_dir)
+    var _y = y + lengthdir_y(sprite_height + 10,_dir)
+    
+    var _xx = x - lengthdir_x(sprite_width + 10,_dir)
+    var _yy = y - lengthdir_y(sprite_height + 10,_dir)
+    
+    lhand.x = _x
+    lhand.y = _y
+    
+    rhand.x = _xx
+    rhand.y = _yy
 }
 
 verify_life = function (){
