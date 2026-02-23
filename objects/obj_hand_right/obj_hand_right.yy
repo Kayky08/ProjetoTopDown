@@ -4,12 +4,17 @@
   "eventList":[],
   "managed":true,
   "name":"obj_hand_right",
-  "overriddenProperties":[],
+  "overriddenProperties":[
+    {"$GMOverriddenProperty":"v1","%Name":"","name":"","objectId":{"name":"obj_hand_left","path":"objects/obj_hand_left/obj_hand_left.yy",},"propertyId":{"name":"spd","path":"objects/obj_hand_left/obj_hand_left.yy",},"resourceType":"GMOverriddenProperty","resourceVersion":"2.0","value":"-5",},
+  ],
   "parent":{
     "name":"player",
     "path":"folders/objects/player.yy",
   },
-  "parentObjectId":null,
+  "parentObjectId":{
+    "name":"obj_hand_left",
+    "path":"objects/obj_hand_left/obj_hand_left.yy",
+  },
   "persistent":false,
   "physicsAngularDamping":0.1,
   "physicsDensity":0.5,

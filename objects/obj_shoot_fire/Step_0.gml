@@ -1,4 +1,4 @@
 // Inherit the parent event
 event_inherited();
 
-self_destruct();
+self_destruction();

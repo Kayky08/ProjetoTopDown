@@ -58,7 +58,7 @@ check_player = function (){
     instance_destroy();
 }
 
-freeze = function (){
+self_destruct = function (){
     timer_freeze++
     
     if(timer_freeze >= time_freeze || keyboard_check_pressed(ord("E"))){

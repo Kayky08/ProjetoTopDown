@@ -6,7 +6,7 @@
   "name":"obj_icon_ice",
   "overriddenProperties":[
     {"$GMOverriddenProperty":"v1","%Name":"","name":"","objectId":{"name":"obj_icon","path":"objects/obj_icon/obj_icon.yy",},"propertyId":{"name":"shoot","path":"objects/obj_icon/obj_icon.yy",},"resource":{"name":"obj_shoot_ice","path":"objects/obj_shoot_ice/obj_shoot_ice.yy",},"resourceType":"GMOverriddenProperty","resourceVersion":"2.0","value":"obj_shoot_ice",},
-    {"$GMOverriddenProperty":"v1","%Name":"","name":"","objectId":{"name":"obj_icon","path":"objects/obj_icon/obj_icon.yy",},"propertyId":{"name":"recharge_time","path":"objects/obj_icon/obj_icon.yy",},"resourceType":"GMOverriddenProperty","resourceVersion":"2.0","value":"120",},
+    {"$GMOverriddenProperty":"v1","%Name":"","name":"","objectId":{"name":"obj_icon","path":"objects/obj_icon/obj_icon.yy",},"propertyId":{"name":"recharge_time","path":"objects/obj_icon/obj_icon.yy",},"resourceType":"GMOverriddenProperty","resourceVersion":"2.0","value":"30",},
     {"$GMOverriddenProperty":"v1","%Name":"","name":"","objectId":{"name":"obj_icon","path":"objects/obj_icon/obj_icon.yy",},"propertyId":{"name":"icon","path":"objects/obj_icon/obj_icon.yy",},"resource":{"name":"spr_icon_ice","path":"sprites/spr_icon_ice/spr_icon_ice.yy",},"resourceType":"GMOverriddenProperty","resourceVersion":"2.0","value":"spr_icon_ice",},
   ],
   "parent":{

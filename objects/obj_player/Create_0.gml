@@ -109,79 +109,7 @@ state_machine = function (){
             hspd = 0;
             vspd = 0;
             
-            if(!fire && shoot == obj_shoot_fire){
-                stress = clamp(stress,2,100);
-                stress -= 0.1;
-            }
-            
             aply_speed();
-            
-            if(fire){
-                state = "shooting";
-            }
-        break;
-        
-        case "shooting":
-            shooting(shoot,shoot2);
-            
-            if (shoot == obj_shoot) state = "recharging_normal";
-            if (shoot == obj_shoot_ice) state = "recharging_ice";
-            if (shoot == obj_shoot_fire) state = "recharging_fire";
-        break;
-    
-        case "recharging_normal":
-            aply_speed();
-            
-            timer_recharge++;
-            
-            if(timer_recharge >= time_recharge){
-                timer_recharge = 0;
-                
-                state = "normal";
-            }
-        break;
-        
-        case "recharging_ice":
-            aply_speed();
-            
-            timer_recharge++;
-            
-            if(timer_recharge >= time_recharge){
-                timer_recharge = 0;
-                
-                state = "normal";
-            }
-        break;
-        
-        case "recharging_fire":
-            aply_speed();
-            
-            timer_recharge++;
-            stress++
-            
-            if(timer_recharge >= time_recharge){
-                timer_recharge = 0;
-                
-                if(stress < 100){
-                    state = "normal";
-                }
-                else {
-                	state = "stressed";
-                }
-            }
-        break;
-        
-        case "stressed":
-            aply_speed();
-            
-            timer_stress++;
-            stress -= 0.5;
-            
-            if(timer_stress >= time_stress && stress <= 0){
-                timer_stress= 0;
-                
-                state = "normal";
-            }
         break;
     
         case "invencible":
