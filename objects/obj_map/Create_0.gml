@@ -7,8 +7,10 @@ cell_v = room_height div cell_size
 mp_grid = mp_grid_create(0,0,cell_h,cell_v,cell_size,cell_size);
 
 //Collisions
-mp_grid_add_instances(mp_grid,obj_collision_wall,false)
+mp_grid_add_instances(mp_grid,obj_collision_wall,false);
 
 check_ice = function (){
-    
+    if(instance_exists(obj_ice)){
+        mp_grid_add_instances(mp_grid,obj_ice,false);
+    }
 }
