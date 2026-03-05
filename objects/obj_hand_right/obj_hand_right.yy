@@ -5,7 +5,7 @@
   "managed":true,
   "name":"obj_hand_right",
   "overriddenProperties":[
-    {"$GMOverriddenProperty":"v1","%Name":"","name":"","objectId":{"name":"obj_hand_left","path":"objects/obj_hand_left/obj_hand_left.yy",},"propertyId":{"name":"spd","path":"objects/obj_hand_left/obj_hand_left.yy",},"resourceType":"GMOverriddenProperty","resourceVersion":"2.0","value":"-5",},
+    {"$GMOverriddenProperty":"v1","%Name":"","name":"","objectId":{"name":"obj_hand_left","path":"objects/obj_hand_left/obj_hand_left.yy",},"propertyId":{"name":"dir","path":"objects/obj_hand_left/obj_hand_left.yy",},"resourceType":"GMOverriddenProperty","resourceVersion":"2.0","value":"-1",},
   ],
   "parent":{
     "name":"player",

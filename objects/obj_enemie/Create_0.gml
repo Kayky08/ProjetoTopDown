@@ -33,9 +33,6 @@ verify_life = function (){
 }
 
 persecution = function (){
-    //direction = point_direction(x,y,obj_player.x,obj_player.y);
-    //speed = 1;
-    
     var _x = x;
     var _y = y;
     

@@ -1,16 +1,24 @@
 #region variablessa
-spd = 5;
-
-bounce = true
-fear = false
-
+bounce = true;
+fear = false;
+tracking = false;
+multiple = false;
 
 #endregion
 
 #region functions
+damage = function (){
+    if(life > 0){
+        life--;
+    }
+    
+    if (life == 0) {
+    	instance_destroy();
+    }
+}
+
 aply_bounce = function(){
-    x = -x
-    y = -y
+    speed = spd * -1;
 }
 
 destroy = function (){

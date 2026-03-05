@@ -1,6 +1,7 @@
 if(bounce){
     aply_bounce();
-    //other.damage();
+    damage()
+    other.damage();
 }else {
 	instance_destroy();
     other.damage();

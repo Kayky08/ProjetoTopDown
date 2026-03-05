@@ -26,14 +26,14 @@ shooting = function (shoot_type){
          
         var shoot = instance_create_layer(x,y,layer,shoot_type);
         
-        shoot.speed = spd;
+        shoot.speed = shoot_type.spd * dir;
         shoot.direction = point_direction(x,y,mouse_x,mouse_y) + _dir;
         shoot.image_angle = point_direction(x,y,mouse_x,mouse_y);
     }
     else {
     	var shoot = instance_create_layer(x,y,layer,shoot_type);
         
-        shoot.speed = spd;
+        shoot.speed = shoot_type.spd * dir;
         shoot.direction = point_direction(x,y,mouse_x,mouse_y);
         shoot.image_angle = point_direction(x,y,mouse_x,mouse_y) + 90;
     }
