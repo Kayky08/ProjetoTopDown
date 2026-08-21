@@ -5,17 +5,12 @@ lhand = instance_create_layer(x - 35,y,layer,obj_hand_left)
 position_hands = true
 
 //Life
-life = 10;
 time_invencible = game_get_speed(gamespeed_fps);
 timer_invencible = 0
 
 //Movementation
-max_spd = 3;
 hspd = 0;
 vspd = 0;
-
-//State
-state = "normal";
 
 //Collision
 collissions = [obj_collision_wall,obj_ice];
@@ -26,8 +21,6 @@ timer_recharge = 0;
 stress = 0;
 time_stress = game_get_speed(gamespeed_fps) * 3;
 timer_stress = 0;
-shoot = obj_shoot;
-shoot2 = obj_shoot
 icon = spr_icon;
 
 //Secundary Weapons
@@ -45,7 +38,8 @@ down = 0;
 left = 0;
 right = 0
 fire = 0;
-inverted = 0; 
+inverted = 0;
+
 #endregion
 
 #region functions
