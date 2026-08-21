@@ -3,7 +3,7 @@ cell_size = 16
 
 state = "normal";
 
-life = 3;
+life = 50;
 
 max_spd = 2;
 hpsd = 0;

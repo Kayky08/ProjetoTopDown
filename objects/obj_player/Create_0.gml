@@ -1,7 +1,7 @@
 #region variables
 //Create hands
-rhand = instance_create_layer(x+35,y,layer,obj_hand_right)
-lhand = instance_create_layer(x-35,y,layer,obj_hand_left)
+rhand = instance_create_layer(x + 35,y,layer,obj_hand_right)
+lhand = instance_create_layer(x - 35,y,layer,obj_hand_left)
 position_hands = true
 
 //Life
@@ -30,6 +30,15 @@ shoot = obj_shoot;
 shoot2 = obj_shoot
 icon = spr_icon;
 
+//Secundary Weapons
+weapon_sec = "pulse";
+weapon_ter = "none";
+weapon_fou = "none";
+weapon_fif = "none";
+
+time_wsec_recharge = game_get_speed(gamespeed_fps) * 3;
+timer_wsec_recharge = 0
+
 //controls
 up = 0;
 down = 0;
@@ -41,14 +50,17 @@ inverted = 0;
 
 #region functions
 move_hands = function (){
+    // FPegando a direção do mouse
     var _dir = point_direction(x,y,mouse_x,mouse_y);
     
+    // Pegando a razão entre o tamanho do sprite e a direção de cada mão
     var _x = x + lengthdir_x(sprite_width + 10,_dir)
     var _y = y + lengthdir_y(sprite_height + 10,_dir)
     
     var _xx = x - lengthdir_x(sprite_width + 10,_dir)
     var _yy = y - lengthdir_y(sprite_height + 10,_dir)
     
+    // Dando esse valor para a mão
     lhand.x = _x
     lhand.y = _y
     
@@ -57,21 +69,27 @@ move_hands = function (){
 }
 
 verify_life = function (){
+    // Verificando se o player morreu
     if(life == 0) damage();
 }
+
 damage = function (){
+    // Verificando se o player pode levar dano
     if(life > 0 && timer_invencible == 0){
         life--;
         
+        // Assim que leva o dano fica invencivel
         state = "invencible";
     }
     
+    // Se morrer restarta a sala
     if (life == 0) {
     	room_restart();
     }
 }
 
 get_inputs = function (){
+    // Pegando todos os botões do jogo
     up = keyboard_check(ord("W"));
     down = keyboard_check(ord("S"));
     left = keyboard_check(ord("A"));
@@ -79,39 +97,35 @@ get_inputs = function (){
     fire = mouse_check_button(mb_left);
     inverted = mouse_check_button_pressed(mb_right);
 }
+
 movementation = function (){
+   // Pegando a velocidade horizontal e vertical e aplicando colisões
    move_and_collide(hspd,0,collissions,12);
    move_and_collide(0,vspd,collissions,12);
 }
+
 aply_speed = function (){
+    // Adicionando velocidade a movimentação do player
     hspd = (right - left) * max_spd
     vspd = (down - up) * max_spd
 }
-shooting = function (shoot_type1,shoot_type2){
-    var shoot1 = instance_create_layer(lhand.x,lhand.y,layer,shoot_type1);
-    var shoot2 = instance_create_layer(rhand.x,rhand.y,layer,shoot_type1);
-    
-    shoot1.speed = 5;
-    shoot1.direction = point_direction(x,y,mouse_x,mouse_y);
-    shoot1.image_angle = point_direction(x,y,mouse_x,mouse_y) + 90;
-    
-    shoot2.speed = -5;
-    shoot2.direction = point_direction(x,y,mouse_x,mouse_y);
-    shoot2.image_angle = point_direction(x,y,mouse_x,mouse_y) + 90;
-}
 
 state_machine = function (){
+    // Chamando as funções de movimentar as mãos
     move_hands();
+    // Chamando as funções de pegar os botões
     get_inputs(); 
     
+    // Verificando cada status principal do player
     switch (state){
+        
     	case "normal":
             hspd = 0;
             vspd = 0;
             
             aply_speed();
         break;
-    
+        
         case "invencible":
             aply_speed()
             
@@ -124,5 +138,33 @@ state_machine = function (){
             }
         break;
     }
+    
+    // Verificando qual arma secundaria
+    switch (weapon_sec) {
+    	case "normal":
+            
+        break;
+        
+        case "pulse":
+            create_pulse();
+            
+            timer_wsec_recharge++;
+            
+            if(timer_wsec_recharge >= time_wsec_recharge){
+                time_wsec_recharge= 0;
+            }
+        break;
+    }
 }
+#endregion
+
+#region test
+
+create_pulse = function (){
+    if !instance_exists(obj_pulse){
+        instance_create_layer(x,y+15,layer,obj_pulse)
+    }
+}
+create_pulse()
+
 #endregion

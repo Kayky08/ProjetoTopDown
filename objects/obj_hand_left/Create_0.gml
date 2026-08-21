@@ -1,6 +1,7 @@
 #region variables
 //State
 state = "normal";
+state_sec = "pulse";
 
 //Shoots
 time_recharge = game_get_speed(gamespeed_fps);

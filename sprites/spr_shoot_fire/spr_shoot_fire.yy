@@ -12,21 +12,21 @@
   "edgeFiltering":false,
   "For3D":false,
   "frames":[
-    {"$GMSpriteFrame":"v1","%Name":"75b7913b-21df-4f92-be3b-0ea83bf3d280","name":"75b7913b-21df-4f92-be3b-0ea83bf3d280","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
+    {"$GMSpriteFrame":"v1","%Name":"81fd73e1-d843-415b-88e7-c256a1f1412e","name":"81fd73e1-d843-415b-88e7-c256a1f1412e","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
   ],
   "gridX":0,
   "gridY":0,
   "height":26,
   "HTile":false,
   "layers":[
-    {"$GMImageLayer":"","%Name":"c35cbb08-6ff3-43b4-861c-cbba3c41ac67","blendMode":0,"displayName":"default","isLocked":false,"name":"c35cbb08-6ff3-43b4-861c-cbba3c41ac67","opacity":100.0,"resourceType":"GMImageLayer","resourceVersion":"2.0","visible":true,},
+    {"$GMImageLayer":"","%Name":"3e5555da-5f0a-4405-b109-60997cda21fc","blendMode":0,"displayName":"default","isLocked":false,"name":"3e5555da-5f0a-4405-b109-60997cda21fc","opacity":100.0,"resourceType":"GMImageLayer","resourceVersion":"2.0","visible":true,},
   ],
   "name":"spr_shoot_fire",
   "nineSlice":null,
   "origin":4,
   "parent":{
-    "name":"shoots",
-    "path":"folders/sprites/shoots.yy",
+    "name":"magics",
+    "path":"folders/sprites/magics.yy",
   },
   "preMultiplyAlpha":false,
   "resourceType":"GMSprite",
@@ -69,8 +69,8 @@
     "tracks":[
       {"$GMSpriteFramesTrack":"","builtinName":0,"events":[],"inheritsTrackColour":true,"interpolation":1,"isCreationTrack":false,"keyframes":{"$KeyframeStore<SpriteFrameKeyframe>":"","Keyframes":[
             {"$Keyframe<SpriteFrameKeyframe>":"","Channels":{
-                "0":{"$SpriteFrameKeyframe":"","Id":{"name":"75b7913b-21df-4f92-be3b-0ea83bf3d280","path":"sprites/spr_shoot_fire/spr_shoot_fire.yy",},"resourceType":"SpriteFrameKeyframe","resourceVersion":"2.0",},
-              },"Disabled":false,"id":"0a769c62-640c-4305-b060-ecea6deb6c84","IsCreationKey":false,"Key":0.0,"Length":1.0,"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"2.0","Stretch":false,},
+                "0":{"$SpriteFrameKeyframe":"","Id":{"name":"81fd73e1-d843-415b-88e7-c256a1f1412e","path":"sprites/spr_shoot_fire/spr_shoot_fire.yy",},"resourceType":"SpriteFrameKeyframe","resourceVersion":"2.0",},
+              },"Disabled":false,"id":"bfe3b728-13b9-46d5-9cc7-e1dd7ee25946","IsCreationKey":false,"Key":0.0,"Length":1.0,"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"2.0","Stretch":false,},
           ],"resourceType":"KeyframeStore<SpriteFrameKeyframe>","resourceVersion":"2.0",},"modifiers":[],"name":"frames","resourceType":"GMSpriteFramesTrack","resourceVersion":"2.0","spriteId":null,"trackColour":0,"tracks":[],"traits":0,},
     ],
     "visibleRange":null,

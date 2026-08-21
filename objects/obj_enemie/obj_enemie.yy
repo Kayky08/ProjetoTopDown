@@ -33,8 +33,8 @@
   "resourceVersion":"2.0",
   "solid":false,
   "spriteId":{
-    "name":"spr_enemie",
-    "path":"sprites/spr_enemie/spr_enemie.yy",
+    "name":"spr_slime",
+    "path":"sprites/spr_slime/spr_slime.yy",
   },
   "spriteMaskId":null,
   "visible":true,
