@@ -1,7 +1,6 @@
 #region variables
 //State
 state = "normal";
-state_sec = "pulse";
 
 //Shoots
 time_recharge = game_get_speed(gamespeed_fps);
@@ -9,7 +8,6 @@ timer_recharge = 0;
 stress = 0;
 time_stress = game_get_speed(gamespeed_fps) * 3;
 timer_stress = 0;
-shoot = obj_shoot;
 icon = spr_icon;
 
 //Controls

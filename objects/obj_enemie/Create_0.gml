@@ -16,14 +16,14 @@ path = path_add()
 #endregion
 
 #region functions
-damage = function (){
+damage = function (_damage = 1){
     if(life > 0){
-        life--
+        life -=_damage
         
         state = "normal";
     }
     
-    if(life == 0){
+    if(life <= 0){
         instance_destroy();
     }
 }

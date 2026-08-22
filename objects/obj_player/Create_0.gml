@@ -24,7 +24,7 @@ timer_stress = 0;
 icon = spr_icon;
 
 //Secundary Weapons
-weapon_sec = "pulse";
+weapon_sec = "bombs";
 weapon_ter = "none";
 weapon_fou = "none";
 weapon_fif = "none";
@@ -135,20 +135,30 @@ state_machine = function (){
     
     // Verificando qual arma secundaria
     switch (weapon_sec) {
-    	case "normal":
+    	case "recharge":
+            timer_wsec_recharge++
             
+            if(timer_wsec_recharge >= time_wsec_recharge){
+                timer_wsec_recharge = 0;
+                
+                weapon_sec = "bombs"
+            }
         break;
         
         case "pulse":
             create_pulse();
-            
-            timer_wsec_recharge++;
-            
-            if(timer_wsec_recharge >= time_wsec_recharge){
-                time_wsec_recharge= 0;
-            }
         break;
+        
+        case "bombs":
+            create_bombs()
+            
+            weapon_sec = "recharge"
+        break;
+    
+        case "spears":
+            
     }
+    
 }
 #endregion
 
@@ -159,6 +169,21 @@ create_pulse = function (){
         instance_create_layer(x,y+15,layer,obj_pulse)
     }
 }
-create_pulse()
+
+create_bombs = function (){
+    var _count = 0
+    
+    repeat (3) { 
+        var _x = random_range(50, -50)
+        var _y = random_range(50, -50)
+        
+        bomb = instance_create_layer(x + _x, y + _y, layer, obj_bomb)
+        _count++
+    }
+    
+    if (_count >= 5) {
+    	weapon_sec = "normal"
+    }
+}
 
 #endregion

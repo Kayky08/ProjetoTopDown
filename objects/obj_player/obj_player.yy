@@ -32,12 +32,6 @@
     {"$GMObjectProperty":"v2","%Name":"life","filters":[],"listItems":[],"multiselect":false,"name":"life","rangeEnabled":false,"rangeMax":10.0,"rangeMin":0.0,"resourceType":"GMObjectProperty","resourceVersion":"2.0","value":"10","varType":1,},
     {"$GMObjectProperty":"v2","%Name":"max_spd","filters":[],"listItems":[],"multiselect":false,"name":"max_spd","rangeEnabled":false,"rangeMax":10.0,"rangeMin":0.0,"resourceType":"GMObjectProperty","resourceVersion":"2.0","value":"3.0","varType":0,},
     {"$GMObjectProperty":"v2","%Name":"state","filters":[],"listItems":[],"multiselect":false,"name":"state","rangeEnabled":false,"rangeMax":10.0,"rangeMin":0.0,"resourceType":"GMObjectProperty","resourceVersion":"2.0","value":"normal","varType":2,},
-    {"$GMObjectProperty":"v2","%Name":"shoot","filters":[
-        "GMObject",
-      ],"listItems":[],"multiselect":false,"name":"shoot","rangeEnabled":false,"rangeMax":10.0,"rangeMin":0.0,"resource":{"name":"obj_shoot","path":"objects/obj_shoot/obj_shoot.yy",},"resourceType":"GMObjectProperty","resourceVersion":"2.0","value":"obj_shoot","varType":5,},
-    {"$GMObjectProperty":"v2","%Name":"shoot2","filters":[
-        "GMObject",
-      ],"listItems":[],"multiselect":false,"name":"shoot2","rangeEnabled":false,"rangeMax":10.0,"rangeMin":0.0,"resource":{"name":"obj_shoot","path":"objects/obj_shoot/obj_shoot.yy",},"resourceType":"GMObjectProperty","resourceVersion":"2.0","value":"obj_shoot","varType":5,},
   ],
   "resourceType":"GMObject",
   "resourceVersion":"2.0",
