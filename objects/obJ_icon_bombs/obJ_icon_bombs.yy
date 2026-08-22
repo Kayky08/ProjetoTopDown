@@ -1,18 +1,18 @@
 {
   "$GMObject":"",
   "%Name":"obJ_icon_bombs",
-  "eventList":[],
+  "eventList":[
+    {"$GMEvent":"v1","%Name":"","collisionObjectId":{"name":"obj_player","path":"objects/obj_player/obj_player.yy",},"eventNum":0,"eventType":4,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
+    {"$GMEvent":"v1","%Name":"","collisionObjectId":null,"eventNum":0,"eventType":8,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
+  ],
   "managed":true,
   "name":"obJ_icon_bombs",
   "overriddenProperties":[],
   "parent":{
     "name":"icons",
-    "path":"folders/objects/icons.yy",
+    "path":"folders/objects/weapons/icons.yy",
   },
-  "parentObjectId":{
-    "name":"obj_icon",
-    "path":"objects/obj_icon/obj_icon.yy",
-  },
+  "parentObjectId":null,
   "persistent":false,
   "physicsAngularDamping":0.1,
   "physicsDensity":0.5,
@@ -26,13 +26,19 @@
   "physicsShape":1,
   "physicsShapePoints":[],
   "physicsStartAwake":true,
-  "properties":[],
+  "properties":[
+    {"$GMObjectProperty":"v2","%Name":"weapon","filters":[],"listItems":[],"multiselect":false,"name":"weapon","rangeEnabled":false,"rangeMax":10.0,"rangeMin":0.0,"resourceType":"GMObjectProperty","resourceVersion":"2.0","value":"bombs","varType":2,},
+    {"$GMObjectProperty":"v2","%Name":"time_recharge","filters":[],"listItems":[],"multiselect":false,"name":"time_recharge","rangeEnabled":false,"rangeMax":10.0,"rangeMin":0.0,"resourceType":"GMObjectProperty","resourceVersion":"2.0","value":"180","varType":1,},
+    {"$GMObjectProperty":"v2","%Name":"icon","filters":[
+        "GMSprite",
+      ],"listItems":[],"multiselect":false,"name":"icon","rangeEnabled":false,"rangeMax":10.0,"rangeMin":0.0,"resource":{"name":"spr_icon_bombs","path":"sprites/spr_icon_bombs/spr_icon_bombs.yy",},"resourceType":"GMObjectProperty","resourceVersion":"2.0","value":"spr_icon_bombs","varType":5,},
+  ],
   "resourceType":"GMObject",
   "resourceVersion":"2.0",
   "solid":false,
   "spriteId":{
-    "name":"spr_icon_fire",
-    "path":"sprites/spr_icon_fire/spr_icon_fire.yy",
+    "name":"spr_icon_bombs",
+    "path":"sprites/spr_icon_bombs/spr_icon_bombs.yy",
   },
   "spriteMaskId":null,
   "visible":true,

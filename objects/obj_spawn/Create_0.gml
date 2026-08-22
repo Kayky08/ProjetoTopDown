@@ -3,8 +3,9 @@ state = "spawn"
 
 life = 10
 
-time_spawn = game_get_speed(gamespeed_fps) * 3;
+time_spawn = game_get_speed(gamespeed_fps) * 5;
 timer_spawn = 0
+
 #endregion
 
 #region functions
@@ -19,7 +20,10 @@ state_machine = function (){
         case "recharging_spawn":
             timer_spawn++
             
+            image_speed += 0.005
+            
             if(timer_spawn >= time_spawn){
+                image_speed = 1
                 timer_spawn = 0;
                 
                 state = "spawn";

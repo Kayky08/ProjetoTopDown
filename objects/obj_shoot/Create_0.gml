@@ -1,7 +1,7 @@
 #region variablessa
 spd = 5;
 
-bounce = true
+bounce = false
 fear = false
 
 

@@ -1,4 +1,4 @@
-#region variables
+ #region variables
 //State
 state = "normal";
 

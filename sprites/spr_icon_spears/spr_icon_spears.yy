@@ -26,7 +26,7 @@
   "origin":0,
   "parent":{
     "name":"icons",
-    "path":"folders/sprites/magics/icons.yy",
+    "path":"folders/sprites/weapons/icons.yy",
   },
   "preMultiplyAlpha":false,
   "resourceType":"GMSprite",

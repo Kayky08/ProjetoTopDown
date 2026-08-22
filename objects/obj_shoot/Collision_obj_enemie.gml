@@ -3,5 +3,5 @@ if(bounce){
     //other.damage();
 }else {
 	instance_destroy();
-    other.damage();
+    other.damage(damage);
 }

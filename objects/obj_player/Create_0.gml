@@ -24,13 +24,20 @@ timer_stress = 0;
 icon = spr_icon;
 
 //Secundary Weapons
-weapon_sec = "bombs";
-weapon_ter = "none";
-weapon_fou = "none";
-weapon_fif = "none";
+weapon_sec = noone;
+weapon_ter = noone;
+weapon_fou = noone;
+weapon_fif = noone;
 
-time_wsec_recharge = game_get_speed(gamespeed_fps) * 3;
-timer_wsec_recharge = 0
+icon_sec = spr_icon_slash
+icon_ter = noone
+icon_fou = noone
+icon_fif = noone
+
+bombs_counts = 3;
+
+time_wsec = game_get_speed(gamespeed_fps) * 3;
+timer_wsec = 0
 
 //controls
 up = 0;
@@ -135,34 +142,63 @@ state_machine = function (){
     
     // Verificando qual arma secundaria
     switch (weapon_sec) {
-    	case "recharge":
-            timer_wsec_recharge++
-            
-            if(timer_wsec_recharge >= time_wsec_recharge){
-                timer_wsec_recharge = 0;
-                
-                weapon_sec = "bombs"
-            }
-        break;
-        
-        case "pulse":
+        case "pulses":
             create_pulse();
         break;
         
         case "bombs":
             create_bombs()
             
-            weapon_sec = "recharge"
+            weapon_sec = "recharge_bombs"
+        break;
+        
+        case "spears":
+            create_spear()
+            
+            weapon_sec = "recharge_spears"
+        break;
+        
+        case "slashs":
+            create_slash()
+            
+            weapon_sec = "recharge_slashs"
+        break;
+        
+        case "recharge_bombs":
+            timer_wsec++
+            
+            if(timer_wsec >= time_wsec){
+                timer_wsec = 0;
+                
+                weapon_sec = "bombs"
+            }
+        break;
+        
+        case "recharge_slashs":
+            timer_wsec++
+            
+            if(timer_wsec >= time_wsec){
+                timer_wsec = 0;
+                
+                weapon_sec = "slashs"
+            }
         break;
     
-        case "spears":
+        case "recharge_spears":
+            timer_wsec++
             
+            if(timer_wsec >= time_wsec){
+                timer_wsec = 0;
+                
+                weapon_sec = "spears"
+            }
+        break;
     }
     
 }
 #endregion
 
-#region test
+#region weapons
 
 create_pulse = function (){
     if !instance_exists(obj_pulse){
@@ -173,7 +209,7 @@ create_pulse = function (){
 create_bombs = function (){
     var _count = 0
     
-    repeat (3) { 
+    repeat (bombs_counts) { 
         var _x = random_range(50, -50)
         var _y = random_range(50, -50)
         
@@ -181,9 +217,25 @@ create_bombs = function (){
         _count++
     }
     
-    if (_count >= 5) {
+    if (_count >= bombs_counts) {
     	weapon_sec = "normal"
     }
+}
+
+create_spear = function (){
+    var _dir = choose(45,135,225,315)
+    
+    var _x = x + lengthdir_x(sprite_width + 15, _dir)
+    var _y = y + lengthdir_y(sprite_height + 15, _dir)
+    
+    var _spear = instance_create_layer(_x,_y,layer,obj_spear)
+    
+    _spear.direction = _dir
+    _spear.image_angle = _dir
+}
+
+create_slash = function (){
+    var _slash = instance_create_layer(x,y - 10,layer,obj_slash)
 }
 
 #endregion

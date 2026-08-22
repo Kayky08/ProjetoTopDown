@@ -5,17 +5,16 @@
   "managed":true,
   "name":"obj_icon_pulse",
   "overriddenProperties":[
-    {"$GMOverriddenProperty":"v1","%Name":"","name":"","objectId":{"name":"obj_icon","path":"objects/obj_icon/obj_icon.yy",},"propertyId":{"name":"shoot","path":"objects/obj_icon/obj_icon.yy",},"resource":{"name":"obj_shoot_ice","path":"objects/obj_shoot_ice/obj_shoot_ice.yy",},"resourceType":"GMOverriddenProperty","resourceVersion":"2.0","value":"obj_shoot_ice",},
-    {"$GMOverriddenProperty":"v1","%Name":"","name":"","objectId":{"name":"obj_icon","path":"objects/obj_icon/obj_icon.yy",},"propertyId":{"name":"recharge_time","path":"objects/obj_icon/obj_icon.yy",},"resourceType":"GMOverriddenProperty","resourceVersion":"2.0","value":"30",},
-    {"$GMOverriddenProperty":"v1","%Name":"","name":"","objectId":{"name":"obj_icon","path":"objects/obj_icon/obj_icon.yy",},"propertyId":{"name":"icon","path":"objects/obj_icon/obj_icon.yy",},"resource":{"name":"spr_icon_ice","path":"sprites/spr_icon_ice/spr_icon_ice.yy",},"resourceType":"GMOverriddenProperty","resourceVersion":"2.0","value":"spr_icon_ice",},
+    {"$GMOverriddenProperty":"v1","%Name":"","name":"","objectId":{"name":"obJ_icon_bombs","path":"objects/obJ_icon_bombs/obJ_icon_bombs.yy",},"propertyId":{"name":"weapon","path":"objects/obJ_icon_bombs/obJ_icon_bombs.yy",},"resourceType":"GMOverriddenProperty","resourceVersion":"2.0","value":"pulses",},
+    {"$GMOverriddenProperty":"v1","%Name":"","name":"","objectId":{"name":"obJ_icon_bombs","path":"objects/obJ_icon_bombs/obJ_icon_bombs.yy",},"propertyId":{"name":"icon","path":"objects/obJ_icon_bombs/obJ_icon_bombs.yy",},"resource":{"name":"spr_icon_pulse","path":"sprites/spr_icon_pulse/spr_icon_pulse.yy",},"resourceType":"GMOverriddenProperty","resourceVersion":"2.0","value":"spr_icon_pulse",},
   ],
   "parent":{
     "name":"icons",
-    "path":"folders/objects/icons.yy",
+    "path":"folders/objects/weapons/icons.yy",
   },
   "parentObjectId":{
-    "name":"obj_icon",
-    "path":"objects/obj_icon/obj_icon.yy",
+    "name":"obJ_icon_bombs",
+    "path":"objects/obJ_icon_bombs/obJ_icon_bombs.yy",
   },
   "persistent":false,
   "physicsAngularDamping":0.1,
@@ -35,8 +34,8 @@
   "resourceVersion":"2.0",
   "solid":false,
   "spriteId":{
-    "name":"spr_icon_waves",
-    "path":"sprites/spr_icon_waves/spr_icon_waves.yy",
+    "name":"spr_icon_pulse",
+    "path":"sprites/spr_icon_pulse/spr_icon_pulse.yy",
   },
   "spriteMaskId":null,
   "visible":true,

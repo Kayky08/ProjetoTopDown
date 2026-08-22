@@ -10,7 +10,7 @@
   "overriddenProperties":[],
   "parent":{
     "name":"icons",
-    "path":"folders/objects/icons.yy",
+    "path":"folders/objects/shoots/icons.yy",
   },
   "parentObjectId":null,
   "persistent":false,
