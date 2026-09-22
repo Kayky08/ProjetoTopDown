@@ -31,7 +31,7 @@
     {"$GMObjectProperty":"v2","%Name":"spd","filters":[],"listItems":[],"multiselect":false,"name":"spd","rangeEnabled":false,"rangeMax":10.0,"rangeMin":0.0,"resourceType":"GMObjectProperty","resourceVersion":"2.0","value":"5","varType":0,},
     {"$GMObjectProperty":"v2","%Name":"shoot","filters":[
         "GMObject",
-      ],"listItems":[],"multiselect":false,"name":"shoot","rangeEnabled":false,"rangeMax":10.0,"rangeMin":0.0,"resource":{"name":"obj_shoot","path":"objects/obj_shoot/obj_shoot.yy",},"resourceType":"GMObjectProperty","resourceVersion":"2.0","value":"obj_shoot","varType":5,},
+      ],"listItems":[],"multiselect":false,"name":"shoot","rangeEnabled":false,"rangeMax":10.0,"rangeMin":0.0,"resource":{"name":"obj_shoot_darkness","path":"objects/obj_shoot_darkness/obj_shoot_darkness.yy",},"resourceType":"GMObjectProperty","resourceVersion":"2.0","value":"obj_shoot_darkness","varType":5,},
     {"$GMObjectProperty":"v2","%Name":"icon","filters":[
         "GMObject",
       ],"listItems":[],"multiselect":false,"name":"icon","rangeEnabled":false,"rangeMax":10.0,"rangeMin":0.0,"resource":{"name":"spr_icon","path":"sprites/spr_icon/spr_icon.yy",},"resourceType":"GMObjectProperty","resourceVersion":"2.0","value":"spr_icon","varType":5,},

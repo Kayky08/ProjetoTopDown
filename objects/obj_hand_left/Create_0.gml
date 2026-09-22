@@ -59,6 +59,7 @@ state_machine = function (){
             if (shoot == obj_shoot) state = "recharging_normal";
             if (shoot == obj_shoot_ice) state = "recharging_ice";
             if (shoot == obj_shoot_fire) state = "recharging_fire";
+            if (shoot == obj_shoot_darkness) state = "recharging_darkness";
         break;
     
         case "recharging_normal":
@@ -72,6 +73,16 @@ state_machine = function (){
         break;
         
         case "recharging_ice":
+            timer_recharge++;
+            
+            if(timer_recharge >= time_recharge){
+                timer_recharge = 0;
+                
+                state = "normal";
+            }
+        break;
+    
+        case "recharging_darkness":
             timer_recharge++;
             
             if(timer_recharge >= time_recharge){

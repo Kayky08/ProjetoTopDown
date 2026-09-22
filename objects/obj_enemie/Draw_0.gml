@@ -6,6 +6,5 @@ draw_path(path,x,y,false);
 
 if(global.debug){
     draw_text(x,y+20,"state:" + string(state));
-    //draw_text(x,y+40,"life:" + string(life));
-    draw_text(x,y+60,"direction:" + string(direction));
+    draw_text(x,y+40,"target:" + string(target));
 }
