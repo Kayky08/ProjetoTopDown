@@ -11,8 +11,8 @@
   "name":"obj_shoot",
   "overriddenProperties":[],
   "parent":{
-    "name":"shoots",
-    "path":"folders/objects/shoots.yy",
+    "name":"magics",
+    "path":"folders/objects/magics.yy",
   },
   "parentObjectId":null,
   "persistent":false,

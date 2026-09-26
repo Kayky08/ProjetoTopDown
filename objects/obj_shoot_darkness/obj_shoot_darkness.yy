@@ -9,8 +9,8 @@
   "name":"obj_shoot_darkness",
   "overriddenProperties":[],
   "parent":{
-    "name":"shoots",
-    "path":"folders/objects/shoots.yy",
+    "name":"magics",
+    "path":"folders/objects/magics.yy",
   },
   "parentObjectId":{
     "name":"obj_shoot",

@@ -10,7 +10,7 @@
   "overriddenProperties":[],
   "parent":{
     "name":"efects",
-    "path":"folders/objects/shoots/efects.yy",
+    "path":"folders/objects/magics/efects.yy",
   },
   "parentObjectId":null,
   "persistent":false,

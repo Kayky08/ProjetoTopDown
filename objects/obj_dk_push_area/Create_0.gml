@@ -1,5 +1,5 @@
 timer = 0
-time = game_get_speed(gamespeed_fps) * 3
+time = game_get_speed(gamespeed_fps) * 0.5
 
 exposion = function (){
     timer++
