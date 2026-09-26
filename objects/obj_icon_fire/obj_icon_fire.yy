@@ -5,7 +5,7 @@
   "managed":true,
   "name":"obj_icon_fire",
   "overriddenProperties":[
-    {"$GMOverriddenProperty":"v1","%Name":"","name":"","objectId":{"name":"obj_icon","path":"objects/obj_icon/obj_icon.yy",},"propertyId":{"name":"shoot","path":"objects/obj_icon/obj_icon.yy",},"resource":{"name":"obj_shoot_fire","path":"objects/obj_shoot_fire/obj_shoot_fire.yy",},"resourceType":"GMOverriddenProperty","resourceVersion":"2.0","value":"obj_shoot_fire",},
+    {"$GMOverriddenProperty":"v1","%Name":"","name":"","objectId":{"name":"obj_icon","path":"objects/obj_icon/obj_icon.yy",},"propertyId":{"name":"shoot","path":"objects/obj_icon/obj_icon.yy",},"resource":{"name":"obj_magic_fire","path":"objects/obj_magic_fire/obj_magic_fire.yy",},"resourceType":"GMOverriddenProperty","resourceVersion":"2.0","value":"obj_magic_fire",},
     {"$GMOverriddenProperty":"v1","%Name":"","name":"","objectId":{"name":"obj_icon","path":"objects/obj_icon/obj_icon.yy",},"propertyId":{"name":"recharge_time","path":"objects/obj_icon/obj_icon.yy",},"resourceType":"GMOverriddenProperty","resourceVersion":"2.0","value":"3",},
     {"$GMOverriddenProperty":"v1","%Name":"","name":"","objectId":{"name":"obj_icon","path":"objects/obj_icon/obj_icon.yy",},"propertyId":{"name":"icon","path":"objects/obj_icon/obj_icon.yy",},"resource":{"name":"spr_icon_fire","path":"sprites/spr_icon_fire/spr_icon_fire.yy",},"resourceType":"GMOverriddenProperty","resourceVersion":"2.0","value":"spr_icon_fire",},
   ],

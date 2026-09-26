@@ -29,7 +29,7 @@
   "properties":[
     {"$GMObjectProperty":"v2","%Name":"shoot","filters":[
         "GMObject",
-      ],"listItems":[],"multiselect":false,"name":"shoot","rangeEnabled":false,"rangeMax":10.0,"rangeMin":0.0,"resource":{"name":"obj_shoot","path":"objects/obj_shoot/obj_shoot.yy",},"resourceType":"GMObjectProperty","resourceVersion":"2.0","value":"obj_shoot","varType":5,},
+      ],"listItems":[],"multiselect":false,"name":"shoot","rangeEnabled":false,"rangeMax":10.0,"rangeMin":0.0,"resource":{"name":"obj_magic","path":"objects/obj_magic/obj_magic.yy",},"resourceType":"GMObjectProperty","resourceVersion":"2.0","value":"obj_magic","varType":5,},
     {"$GMObjectProperty":"v2","%Name":"recharge_time","filters":[],"listItems":[],"multiselect":false,"name":"recharge_time","rangeEnabled":false,"rangeMax":10.0,"rangeMin":0.0,"resourceType":"GMObjectProperty","resourceVersion":"2.0","value":"60","varType":0,},
     {"$GMObjectProperty":"v2","%Name":"icon","filters":[
         "GMSprite",

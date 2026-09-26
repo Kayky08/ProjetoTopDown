@@ -2,7 +2,9 @@
 //State
 state = "normal";
 
-//Shoots
+//Magics
+normal_recharging = [obj_magic,obj_magic_darkness,obj_magic_ice,obj_magic_light,obj_magic_wind]
+
 time_recharge = game_get_speed(gamespeed_fps);
 timer_recharge = 0;
 stress = 0;
@@ -20,7 +22,7 @@ get_inputs = function (){
 }
 
 shooting = function (shoot_type){
-    if (shoot_type == obj_shoot_fire) {
+    if (shoot_type == obj_magic_fire) {
         var _dir = random_range(-45,45);
          
         var shoot = instance_create_layer(x,y,layer,shoot_type);
@@ -43,7 +45,7 @@ state_machine = function (){
     
     switch (state) {
     	case "normal":
-            if(!fire && shoot == obj_shoot_fire){
+            if(!fire && shoot == obj_magic_fire){
                 stress = clamp(stress,2,100);
                 stress -= 0.1;
             }
@@ -56,33 +58,16 @@ state_machine = function (){
         case "shooting":
             shooting(shoot);
             
-            if (shoot == obj_shoot) state = "recharging_normal";
-            if (shoot == obj_shoot_ice) state = "recharging_ice";
-            if (shoot == obj_shoot_fire) state = "recharging_fire";
-            if (shoot == obj_shoot_darkness) state = "recharging_darkness";
+            if (shoot == obj_magic)          state = "recharging_normal";
+            if (shoot == obj_magic_ice)      state = "recharging_normal";
+            if (shoot == obj_magic_darkness) state = "recharging_normal"; 
+            if (shoot == obj_magic_light)    state = "recharging_normal"; 
+            if (shoot == obj_magic_wind)     state = "recharging_normal";
+            
+            if (shoot == obj_magic_fire)     state = "recharging_fire";
         break;
     
         case "recharging_normal":
-            timer_recharge++;
-            
-            if(timer_recharge >= time_recharge){
-                timer_recharge = 0;
-                
-                state = "normal";
-            }
-        break;
-        
-        case "recharging_ice":
-            timer_recharge++;
-            
-            if(timer_recharge >= time_recharge){
-                timer_recharge = 0;
-                
-                state = "normal";
-            }
-        break;
-    
-        case "recharging_darkness":
             timer_recharge++;
             
             if(timer_recharge >= time_recharge){

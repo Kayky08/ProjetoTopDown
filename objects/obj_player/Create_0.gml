@@ -24,7 +24,7 @@ timer_stress = 0;
 icon = spr_icon;
 
 //Secundary Weapons
-weapon_sec = "bombs";
+weapon_sec = noone;
 weapon_ter = noone;
 weapon_fou = noone;
 weapon_fif = noone;
