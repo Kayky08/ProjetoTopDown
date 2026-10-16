@@ -51,7 +51,6 @@
     {"id":{"name":"obj_enemie","path":"objects/obj_enemie/obj_enemie.yy",},},
     {"id":{"name":"obj_hand_left","path":"objects/obj_hand_left/obj_hand_left.yy",},},
     {"id":{"name":"obj_hand_right","path":"objects/obj_hand_right/obj_hand_right.yy",},},
-    {"id":{"name":"obj_ice","path":"objects/obj_ice/obj_ice.yy",},},
     {"id":{"name":"obJ_icon_bombs","path":"objects/obJ_icon_bombs/obJ_icon_bombs.yy",},},
     {"id":{"name":"obj_icon_darkness","path":"objects/obj_icon_darkness/obj_icon_darkness.yy",},},
     {"id":{"name":"obj_icon_fire","path":"objects/obj_icon_fire/obj_icon_fire.yy",},},
