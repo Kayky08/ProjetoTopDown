@@ -1,3 +1,4 @@
+// Dando dano depois de um determinado tempo
 timer_recharge++
 
 if(timer_recharge >= time_recharge){

@@ -1,1 +1,2 @@
-state_machine();
+// Chamando a maquina de estado
+state_machine()

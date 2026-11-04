@@ -1,9 +1,7 @@
 {
   "$GMObject":"",
   "%Name":"obj_icon_wind",
-  "eventList":[
-    {"$GMEvent":"v1","%Name":"","collisionObjectId":{"name":"obj_hand_left","path":"objects/obj_hand_left/obj_hand_left.yy",},"eventNum":0,"eventType":4,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
-  ],
+  "eventList":[],
   "managed":true,
   "name":"obj_icon_wind",
   "overriddenProperties":[

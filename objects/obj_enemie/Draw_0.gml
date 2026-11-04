@@ -1,17 +1,23 @@
-draw_self();
+// Fazendo ele se desenhar
+draw_self()
 
-draw_text(x - 15,y - 30,"life:" + string(life));
+// Mostrando a vida
+draw_text(x - 15,y - 30,"life:" + string(life))
 
-draw_path(path,x,y,false);
+// Desenha o caminho que ele esta fazendo
+//draw_path(path,x,y,false);
 
+// Status de debug
 if(global.debug){
-    draw_text(x,y+20,"state:" + string(state));
-    draw_text(x,y+40,"timer debuff:" + string(timer));
-    draw_text(x,y+60,"speed:" + string(speed));
+    draw_text(x,y+20,"state:" + string(state))
+    draw_text(x,y+40,"timer debuff:" + string(timer))
+    draw_text(x,y+60,"speed:" + string(speed))
 }
 
+// Adicionando efeitos visuais dependendo do status
 if (state = "freeze") {
-    gpu_set_blendmode(bm_add); // modo de adição (brilho)
+    gpu_set_blendmode(bm_add) // modo de adição (brilho)
+    
     draw_sprite_ext(
         sprite_index, // sprite que vai ser desenhado
         image_index, // imagem que vai ser desenhado
@@ -22,6 +28,7 @@ if (state = "freeze") {
         image_angle, // angulo da imagem
         make_color_rgb(0, 0, 255), // cor da sprite
         0.5 // transparência
-    );
-    gpu_set_blendmode(bm_normal); // volta ao normal
+    )
+    
+    gpu_set_blendmode(bm_normal) // volta ao normal
 }

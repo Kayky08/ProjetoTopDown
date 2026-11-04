@@ -6,7 +6,6 @@ max_spd = 1
 hpsd    = 0
 vpsd    = 0
 
-// Estado padrão
 state = "normal"
 
 // Tamanho da celula para a locomoção do inimigo
@@ -15,7 +14,7 @@ path      = path_add()
 target    = obj_player
 
 // Arrays
-collisions = [obj_ice,obj_collision_wall] // Colisões
+collisions = [obj_collision_wall] // Colisões
 areas      = [obj_dk_explosion_area,obj_dk_push_area] // Areas de ativos
 
 // Timers
@@ -41,13 +40,6 @@ damage = function (_damage = 1){
     }
 }
 
-
-// Verificar!!!
-verify_life = function (){
-    if(life == 0) damage()
-}
-
-
 persecution = function (){
     // Se o target não existe ele define o player como o padrão e redefine a velocidade para o padrão
     if !instance_exists(target) {
@@ -69,6 +61,7 @@ persecution = function (){
     }
 }
 
+// Maquina de estados do inimigo
 state_machine = function (){
     switch (state) {
     	case "normal":
@@ -80,9 +73,8 @@ state_machine = function (){
             
             timer++
             
-            if timer > freeze_time {
+            if timer >= freeze_time {
                 timer = 0
-                max_spd = 1
                 state = "normal"
             }
         break

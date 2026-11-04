@@ -1,1 +1,2 @@
+// Chamando os comandos
 comands();

@@ -75,6 +75,8 @@
     {"id":{"name":"obj_spawn","path":"objects/obj_spawn/obj_spawn.yy",},},
     {"id":{"name":"obj_spear","path":"objects/obj_spear/obj_spear.yy",},},
     {"id":{"name":"obj_system","path":"objects/obj_system/obj_system.yy",},},
+    {"id":{"name":"obj_wave_v1","path":"objects/obj_wave_v1/obj_wave_v1.yy",},},
+    {"id":{"name":"obj_wave_v2","path":"objects/obj_wave_v2/obj_wave_v2.yy",},},
     {"id":{"name":"Room1","path":"rooms/Room1/Room1.yy",},},
     {"id":{"name":"scr_all","path":"scripts/scr_all/scr_all.yy",},},
     {"id":{"name":"spr_bomb_explosion","path":"sprites/spr_bomb_explosion/spr_bomb_explosion.yy",},},

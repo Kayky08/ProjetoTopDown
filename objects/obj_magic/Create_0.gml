@@ -1,6 +1,6 @@
 #region variables
-
-spd = 5;
+// Atributos
+spd = 5
 bounce = false
 fear = false
 
