@@ -7,14 +7,14 @@ stress = 0
 icon = spr_icon
 
 // Magias
-normal_recharging = [obj_magic,obj_magic_darkness,obj_magic_ice,obj_magic_light,obj_magic_wind]
+normal_recharging = [obj_magic,obj_magic_darkness,obj_magic_light,obj_magic_wind]
+medium_recharging = [obj_magic_ice]
+low_recharging    = [obj_magic_fire]
 
 // Timers
-time_recharge  = game_get_speed(gamespeed_fps)
 timer_recharge = 0
-
-time_stress  = game_get_speed(gamespeed_fps) * 3
-timer_stress = 0
+time_recharge_low = game_get_speed(gamespeed_fps) * 0.1
+time_recharge_medium = game_get_speed(gamespeed_fps) * 0.5
 
 // Controles
 fire = 0
@@ -61,13 +61,6 @@ state_machine = function (){
     // Verificando qual estado esta o player
     switch (state) {
     	case "normal":
-            // Verifica se é a magia de fogo
-            if(shoot == obj_magic_fire){
-                // Aumentando o stresse do tiro de fogo
-                stress = clamp(stress,2,100)
-                stress -= 0.1
-            }
-            
             state = "shooting"
         break
         
@@ -77,8 +70,10 @@ state_machine = function (){
             
             // Verificando qual tempo de recarca para aplicar
             if array_contains(normal_recharging, shoot) state = "recharging_normal"
+            if array_contains(medium_recharging, shoot) state = "recharging_medium"
+            if array_contains(low_recharging, shoot)    state = "recharging_low"
             
-            if (shoot == obj_magic_fire) state = "recharging_fire"
+            if (shoot == obj_magic_fire) state = "recharging_low"
         break
     
         case "recharging_normal":
@@ -86,44 +81,36 @@ state_machine = function (){
             timer_recharge++
             
             // Voltando ao estado normal ao terminar o timer
-            if(timer_recharge >= time_recharge){
+            if(timer_recharge >= time_recharge_normal){
                 timer_recharge = 0
                 
                 state = "normal"
             }
         break
         
-        case "recharging_fire":
+        case "recharging_medium":
             // Ativando o timer e o stresse
             timer_recharge++
-            stress++
             
             // Voltando ao estado normal ao terminar o timer
-            if(timer_recharge >= time_recharge){
+            if(timer_recharge >= time_recharge_medium){
                 timer_recharge = 0
                 
-                // Verificando se o stresse esta no limite
-                if(stress < 100){
-                    state = "normal"
-                }
-                else {
-                	state = "stressed"
-                }
+                state = "normal"
             }
         break;
         
-        case "stressed": 
-            // Ativando o timer do stresse e diminuindo
-            timer_stress++
-            stress -= 0.5
+        case "recharging_low":
+            // Ativando o timer e o stresse
+            timer_recharge++
             
             // Voltando ao estado normal ao terminar o timer
-            if(timer_stress >= time_stress && stress <= 0){
-                timer_stress= 0
+            if(timer_recharge >= time_recharge_low){
+                timer_recharge = 0
                 
                 state = "normal"
             }
-        break
+        break;
     }
 }
 #endregion

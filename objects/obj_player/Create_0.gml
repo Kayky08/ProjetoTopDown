@@ -8,28 +8,28 @@ stress = 0;
 icon = spr_icon;
 
 // Criando as mãos
-rhand = instance_create_layer(x + 35,y,layer,obj_hand_right)
-lhand = instance_create_layer(x - 35,y,layer,obj_hand_left)
+rhand          = instance_create_layer(x,y,layer,obj_hand_right)
+lhand          = instance_create_layer(x,y,layer,obj_hand_left)
 position_hands = true
 
 // Timers
-time_invencible = game_get_speed(gamespeed_fps);
+time_invencible  = game_get_speed(gamespeed_fps);
 timer_invencible = 0
 
-time_recharge = game_get_speed(gamespeed_fps);
+time_recharge  = game_get_speed(gamespeed_fps);
 timer_recharge = 0;
 
-time_stress = game_get_speed(gamespeed_fps) * 3;
+time_stress  = game_get_speed(gamespeed_fps) * 3;
 timer_stress = 0;
 
-time_wsec = game_get_speed(gamespeed_fps) * 3;
+time_wsec  = game_get_speed(gamespeed_fps) * 3;
 timer_wsec = 0
 
 // Colisões
 collissions = [obj_collision_wall];
 
 // Armas secundarias
-weapon_sec = noone;
+weapon_sec = "slashs";
 weapon_ter = noone;
 weapon_fou = noone;
 weapon_fif = noone;
@@ -42,11 +42,11 @@ icon_fif = noone
 bombs_counts = 3;
 
 // Controles
-up = 0;
-down = 0;
-left = 0;
-right = 0
-fire = 0;
+up       = 0;
+down     = 0;
+left     = 0;
+right    = 0
+fire     = 0;
 inverted = 0;
 
 #endregion
@@ -164,7 +164,7 @@ state_machine = function (){
         
         case "spears":
             // Criando as bombas
-            create_spear()
+            var _spear = instance_create_layer(x,y,layer,obj_spear)
             
             // Trocando para o estado de recarregar
             weapon_sec = "recharge_spears"
@@ -172,7 +172,7 @@ state_machine = function (){
         
         case "slashs":
             // Criando os Slashs 
-            create_slash()
+            var _slash = instance_create_layer(x,y,layer,obj_slash)
             
             // Trocando para o estado de recarregar 
             weapon_sec = "recharge_slashs"
@@ -244,27 +244,6 @@ create_bombs = function (){
     if (_count >= bombs_counts) {
     	weapon_sec = "normal"
     }
-}
-
-create_spear = function (){
-    // Pegando os angulos para criar as spears
-    var _dir = choose(45,135,225,315)
-    
-    // Defiinindo a direção que serão lançadas
-    var _x = x + lengthdir_x(sprite_width + 15, _dir)
-    var _y = y + lengthdir_y(sprite_height + 15, _dir)
-    
-    // Criando as lanças
-    var _spear = instance_create_layer(_x,_y,layer,obj_spear)
-    
-    // Definindo os atributos
-    _spear.direction = _dir
-    _spear.image_angle = _dir
-}
-
-create_slash = function (){
-    // Criando os slashs
-    var _slash = instance_create_layer(x,y - 10,layer,obj_slash)
 }
 
 #endregion

@@ -1,6 +1,6 @@
 #region variables
 // Atributos
-life = 50
+life = 10
 
 max_spd = 1
 hpsd    = 0

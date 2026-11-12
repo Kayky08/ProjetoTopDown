@@ -5,4 +5,8 @@ image_yscale = 1.5;
 
 // Criando a lista de dano
 hit_list = [];
+
+#endregion
+
+#region Funções
 #endregion

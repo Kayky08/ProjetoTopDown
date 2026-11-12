@@ -1,0 +1,2 @@
+create()
+self_destruction()

@@ -3,9 +3,9 @@ image_index = -1
 image_speed = 0
 
 // Ativando o timer
-timer++
+timer_animation++
 
 // Quando acaba a animação aciona a velocidade
-if (timer >= time) {
+if timer_animation >= time_animation {
 	speed = spd
 }
