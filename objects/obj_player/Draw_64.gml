@@ -2,9 +2,7 @@
 //draw_rectangle(10,10,100,100, true);
 //draw_rectangle(10,110,70,170, true);
 //
-//// Desenhando os icones da magia e da arma secundaria
-//draw_sprite_ext(icon,0,55,55,2.5,2.5,image_angle,image_blend,image_alpha);
-//draw_sprite_ext(icon_sec,0,18,115,2.5,2.5,image_angle,image_blend,image_alpha);
+
 //
 //// Desenhando o texto da vida atual
 //draw_text(120,10,"life:" + string(life))

@@ -1,11 +1,16 @@
 #region variables
 // Atributos
+max_life = 10
+life = max_life
+
 hspd = 0;
 vspd = 0;
 
-stress = 0;
+icon = spr_icon_ice;
 
-icon = spr_icon;
+level = 0
+max_xp = 20
+xp = 0
 
 // Criando as mãos
 rhand          = instance_create_layer(x,y,layer,obj_hand_right)
@@ -18,9 +23,6 @@ timer_invencible = 0
 
 time_recharge  = game_get_speed(gamespeed_fps);
 timer_recharge = 0;
-
-time_stress  = game_get_speed(gamespeed_fps) * 3;
-timer_stress = 0;
 
 time_wsec  = game_get_speed(gamespeed_fps) * 3;
 timer_wsec = 0
@@ -111,6 +113,18 @@ aply_speed = function (){
     // Adicionando velocidade a movimentação do player
     hspd = (right - left) * max_spd
     vspd = (down - up) * max_spd
+}
+
+level_up = function (){
+    if (xp >= max_xp){
+        level++
+        xp = 0
+        max_xp = floor(max_xp + (max_xp * 0.25))
+        
+        // Pausar o Jogo
+        
+        // Criar uma tela com 3 card de upgrade de status
+    }
 }
 
 state_machine = function (){

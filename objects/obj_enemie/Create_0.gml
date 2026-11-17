@@ -36,6 +36,16 @@ damage = function (_damage = 1){
     
     // Verificando se o inimigo já morreu
     if life <= 0 {
+        var _chance_xp    = random(100)
+        var _chance_healt = random(100)
+        
+        if _chance_xp < 90 {
+            instance_create_layer(x,y,layer,obj_xp)
+        }
+        if _chance_healt < 5 {
+            instance_create_layer(x,y,layer,obj_healt)
+        }
+        
         instance_destroy()
     }
 }
@@ -78,7 +88,7 @@ state_machine = function (){
                 state = "normal"
             }
         break
-    
+        
         case "light":
             path_end()
             timer++
