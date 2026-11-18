@@ -53,7 +53,7 @@ damage = function (_damage = 1){
 persecution = function (){
     // Se o target não existe ele define o player como o padrão e redefine a velocidade para o padrão
     if !instance_exists(target) {
-        target = obj_player
+        target  = obj_player
         max_spd = 1
     }
     
@@ -73,30 +73,35 @@ persecution = function (){
 
 // Maquina de estados do inimigo
 state_machine = function (){
-    switch (state) {
-    	case "normal":
-            persecution()
-        break;
-        
-        case "freeze":
-            path_end()
+    if !global.pause{
+        switch (state) {
+            case "normal":
+                persecution()
+            break;
             
-            timer++
+            case "freeze":
+                path_end()
+                
+                timer++
+                
+                if timer >= freeze_time {
+                    timer = 0
+                    state = "normal"
+                }
+            break
             
-            if timer >= freeze_time {
-                timer = 0
-                state = "normal"
-            }
-        break
-        
-        case "light":
-            path_end()
-            timer++
-            
-            if timer >= light_time{
-                state = "normal"
-            }
-        break
+            case "light":
+                path_end()
+                timer++
+                
+                if timer >= light_time{
+                    state = "normal"
+                }
+            break
+        }
+    }
+    else {
+    	path_end()
     }
 }
 #endregion

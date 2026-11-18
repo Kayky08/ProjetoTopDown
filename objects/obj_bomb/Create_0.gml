@@ -12,16 +12,23 @@ timer = 0
 
 #region Functions
 explosion = function (){
-    // Ativando o timer
-    timer++
-    
-    // Aumentando a velocidade da animação
-    image_speed += 0.04
-    
-    // Se destruindo e criando a animação de explosão
-    if (timer >= time){
-        instance_destroy()
-        instance_create_layer(x,y,layer,obj_bomb_explosion)
+    if !global.pause{
+        image_speed = 1
+        
+        // Ativando o timer
+        timer++
+        
+        // Aumentando a velocidade da animação
+        image_speed += 0.04
+        
+        // Se destruindo e criando a animação de explosão
+        if (timer >= time){
+            instance_destroy()
+            instance_create_layer(x,y,layer,obj_bomb_explosion)
+        }
+    }
+    else {
+        image_speed = 0
     }
 }
 

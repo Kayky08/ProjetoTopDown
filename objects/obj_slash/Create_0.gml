@@ -12,4 +12,12 @@ hit_list = [];
 #endregion
 
 #region Funções
+check_pause = function (){
+    if global.pause {
+        image_speed = 0
+    }
+    else {
+    	image_speed = 1
+    }
+}
 #endregion

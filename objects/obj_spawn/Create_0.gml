@@ -48,27 +48,29 @@ get_spawn_position = function (){
 }
 
 spawn_enemies = function (){
-    timer++
-    
-    // Pegando o tempo total da partida em segundos
-    var _elapsed = obj_stopwatch.hours * 3600 + obj_stopwatch.minutes * 60 + obj_stopwatch.seconds
-    
-    // Dininuir o intervalo a cada certo tempo
-    var _difficulty = floor(_elapsed / 60)
-    
-    time_spawn = max(time_spawn_min,time_spawn_base - _difficulty * game_get_speed(gamespeed_fps))
-
-    // Verificar se chegou a hora de spawnar o inimigo
-    if timer >= time_spawn {
-        timer = 0
+    if !global.pause {
+        timer++
         
-        // Verificar chance de spawn
-        repeat (10) {
-            if random(1) < spawn_chance {
-                var _position = get_spawn_position()
-                
-                if !is_undefined(_position){
-                    instance_create_layer(_position[0],_position[1],layer,obj_enemie)
+        // Pegando o tempo total da partida em segundos
+        var _elapsed = obj_stopwatch.hours * 3600 + obj_stopwatch.minutes * 60 + obj_stopwatch.seconds
+        
+        // Dininuir o intervalo a cada certo tempo
+        var _difficulty = floor(_elapsed / 60)
+        
+        time_spawn = max(time_spawn_min,time_spawn_base - _difficulty * game_get_speed(gamespeed_fps))
+        
+        // Verificar se chegou a hora de spawnar o inimigo
+        if timer >= time_spawn {
+            timer = 0
+            
+            // Verificar chance de spawn
+            repeat (10) {
+                if random(1) < spawn_chance {
+                    var _position = get_spawn_position()
+                    
+                    if !is_undefined(_position){
+                        instance_create_layer(_position[0],_position[1],layer,obj_enemie)
+                    }
                 }
             }
         }

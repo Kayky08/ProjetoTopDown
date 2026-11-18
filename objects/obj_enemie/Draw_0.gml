@@ -9,9 +9,9 @@ draw_text(x - 15,y - 30,"life:" + string(life))
 
 // Status de debug
 if(global.debug){
-    draw_text(x,y+20,"state:" + string(state))
-    draw_text(x,y+40,"timer debuff:" + string(timer))
-    draw_text(x,y+60,"speed:" + string(speed))
+    //draw_text(x,y+20,"state:" + string(state))
+    draw_text(x,y+20,"timer debuff:" + string(timer))
+    //draw_text(x,y+60,"speed:" + string(speed))
 }
 
 // Adicionando efeitos visuais dependendo do status

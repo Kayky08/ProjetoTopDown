@@ -1,16 +1,20 @@
 #region variables
 // Atributos
 max_life = 10
-life = max_life
+life     = max_life
 
-hspd = 0;
-vspd = 0;
+max_spd = 3
+hspd    = 0
+vspd    = 0
+
+level_upgrade = false
+max_xp = 20
+level  = 0
+xp     = 0
+
+state = "normal"
 
 icon = spr_icon_ice;
-
-level = 0
-max_xp = 20
-xp = 0
 
 // Criando as mãos
 rhand          = instance_create_layer(x,y,layer,obj_hand_right)
@@ -31,12 +35,16 @@ timer_wsec = 0
 collissions = [obj_collision_wall];
 
 // Armas secundarias
-weapon_sec = "slashs";
+ws_damage = 20
+
+ws_paused = noone
+
+weapon_sec = "pulses";
 weapon_ter = noone;
 weapon_fou = noone;
 weapon_fif = noone;
 
-icon_sec = spr_icon_slash
+icon_sec = spr_icon_pulse
 icon_ter = noone
 icon_fou = noone
 icon_fif = noone
@@ -55,22 +63,24 @@ inverted = 0;
 
 #region functions
 move_hands = function (){
-    // Pegando a direção do mouse
-    var _dir = point_direction(x,y,mouse_x,mouse_y);
-    
-    // Pegando a razão entre o tamanho do sprite e a direção de cada mão
-    var _x = x + lengthdir_x(sprite_width + 10,_dir)
-    var _y = y + lengthdir_y(sprite_height + 10,_dir)
-    
-    var _xx = x - lengthdir_x(sprite_width + 10,_dir)
-    var _yy = y - lengthdir_y(sprite_height + 10,_dir)
-    
-    // Dando esse valor para a mão
-    lhand.x = _x
-    lhand.y = _y
-    
-    rhand.x = _xx
-    rhand.y = _yy
+    if !global.pause{
+        // Pegando a direção do mouse
+        var _dir = point_direction(x,y,mouse_x,mouse_y);
+        
+        // Pegando a razão entre o tamanho do sprite e a direção de cada mão
+        var _x = x + lengthdir_x(sprite_width + 10,_dir)
+        var _y = y + lengthdir_y(sprite_height + 10,_dir)
+        
+        var _xx = x - lengthdir_x(sprite_width + 10,_dir)
+        var _yy = y - lengthdir_y(sprite_height + 10,_dir)
+        
+        // Dando esse valor para a mão
+        lhand.x = _x
+        lhand.y = _y
+        
+        rhand.x = _xx
+        rhand.y = _yy
+    }
 }
 
 verify_life = function (){
@@ -117,11 +127,13 @@ aply_speed = function (){
 
 level_up = function (){
     if (xp >= max_xp){
+        level_upgrade = true
         level++
         xp = 0
         max_xp = floor(max_xp + (max_xp * 0.25))
         
         // Pausar o Jogo
+        global.pause = !global.pause
         
         // Criar uma tela com 3 card de upgrade de status
     }
@@ -137,12 +149,15 @@ state_machine = function (){
     // Verificando cada status principal do player
     switch (state){
         
-    	case "normal":
+        case "normal":
             hspd = 0;
             vspd = 0;
+            image_speed = 1
             
             // Fazendo o player se mover
             aply_speed();
+            
+            if global.pause state = "paused"
         break;
         
         case "invencible":
@@ -158,6 +173,17 @@ state_machine = function (){
                 
                 state = "normal";
             }
+            
+            if global.pause state = "paused"
+        break;
+        
+        case "paused":
+            hspd = 0
+            vspd = 0
+            image_speed = 0
+            
+            // Fazendo o player se mover
+            if !global.pause state = "normal"
         break;
     }
     
@@ -202,6 +228,12 @@ state_machine = function (){
                 
                 weapon_sec = "bombs"
             }
+            
+            if global.pause {
+                ws_paused = weapon_sec
+                
+                weapon_sec = "paused"
+            }
         break;
         
         case "recharge_slashs":
@@ -213,6 +245,12 @@ state_machine = function (){
                 timer_wsec = 0;
                 
                 weapon_sec = "slashs"
+            }
+            
+            if global.pause {
+                ws_paused = weapon_sec
+                
+                weapon_sec = "paused"
             }
         break;
         
@@ -226,9 +264,18 @@ state_machine = function (){
                 
                 weapon_sec = "spears"
             }
-        break;
+            
+            if global.pause {
+                ws_paused = weapon_sec
+                
+                weapon_sec = "paused"
+            }
+        break
+        
+        case "paused":
+            if !global.pause weapon_sec = ws_paused
+        break
     }
-    
 }
 #endregion
 
@@ -237,7 +284,7 @@ state_machine = function (){
 create_pulse = function (){
     // Verificando se existe um outro pulso
     if !instance_exists(obj_pulse){
-        instance_create_layer(x,y+15,layer,obj_pulse)
+        instance_create_layer(x,y + 15,layer,obj_pulse)
     }
 }
 

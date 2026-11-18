@@ -20,12 +20,21 @@ hit_list = []
 
 #region functions
 self_destruction = function (){
-    // Ativando o timer
-    timer++
-    
-    // Fazendo ele se destruir ao final do tempo
-    if timer > time{
-        instance_destroy();
+    if !global.pause {
+        image_speed = 1
+        speed = spd
+        
+        // Ativando o timer
+        timer++
+        
+        // Fazendo ele se destruir ao final do tempo
+        if timer > time{
+            instance_destroy();
+        }
+    }
+    else {
+        image_speed = 0
+        speed = 0
     }
 }
 
@@ -47,5 +56,4 @@ create = function (){
         y = _y
     }
 }
-
 #endregion

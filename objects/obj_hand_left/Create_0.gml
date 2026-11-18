@@ -62,6 +62,8 @@ state_machine = function (){
     switch (state) {
     	case "normal":
             state = "shooting"
+            
+            if global.pause state = "paused"
         break
         
         case "shooting":
@@ -111,6 +113,10 @@ state_machine = function (){
                 state = "normal"
             }
         break;
+        
+        case "paused":
+            if !global.pause state = "normal"
+        break
     }
 }
 #endregion

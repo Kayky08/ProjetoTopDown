@@ -1,8 +1,10 @@
 // Dando dano depois de um determinado tempo
-timer_recharge++
-
-if(timer_recharge >= time_recharge){
-    timer_recharge = 0
+if !global.pause {
+    timer_recharge++
     
-    other.damage(damage)
+    if(timer_recharge >= time_recharge){
+        timer_recharge = 0
+        
+        other.damage(damage)
+    }
 }
